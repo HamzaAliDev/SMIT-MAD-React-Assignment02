@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import 'bootstrap/dist/js/bootstrap.bundle';
+import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Routes from './pages/Routes';
+// import Login from './pages/Auth/Login';
+// import Register from './pages/Auth/Register';
+// import Forget from './pages/Auth/Forget';
+// import Update from './pages/Auth/Update';
+// import Landing from './pages/Frontend/Landing';
+// import Header from './components/Header';
+// import Home from './pages/Frontend/Home';
+// import AddTodo from './pages/Frontend/AddTodo';
+// import TodoList from './pages/Frontend/TodoList';
+// import UserList from './pages/Frontend/UserList';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <ToastContainer />
+    <BrowserRouter>
+    <Routes />
+    
+    </BrowserRouter>
+    {/* <Login /> */}
+    {/* <Forget /> */}
+    {/* <Update /> */}
+    {/* <Landing /> */}
+    {/* <Header /> */}
+    {/* <Home /> */}
+    {/* <AddTodo /> */}
+    {/* <TodoList /> */}
+    {/* <UserList /> */}
+   </>
   );
 }
 

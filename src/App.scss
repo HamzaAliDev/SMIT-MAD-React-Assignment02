@@ -1,0 +1,39 @@
+@import './scss/bootstrap';
+@import './scss/auth';
+@import './scss/landing';
+@import './scss/home';
+@import './scss/header';
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1 0 auto;
+}
+
+// scss of AddTodo page.
+.card-todo{
+    width: 450px;
+    padding: 15px;
+    border: 1px solid #5a189a;
+    border-radius: 10px;
+}
+.add-btn{
+    background-color:#ff8500 ;
+    &:hover{
+        background-color: #ffa200;
+    }
+}
+
+.table-responsive {
+    overflow-x: auto;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 992px) {
+    .table-responsive {
+        -webkit-overflow-scrolling: touch; /* Adds momentum scrolling on iOS */
+        border: 1px solid #ddd; /* Optional: add a border for better visualization */
+    }
+}
