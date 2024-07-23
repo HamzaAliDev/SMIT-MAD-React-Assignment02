@@ -15,10 +15,13 @@ export default function Frontend() {
     const isLandingPage = location.pathname === '/';
     const isNoPage404 = location.pathname === '*';
 
-    // console.log(isLandingPage);
-    // console.log(isNoPage404);
-    const showHeader = !isLandingPage && !isNoPage404;
-    // console.log(showHeader);
+    console.log(isLandingPage);
+    console.log(isNoPage404);
+    let showHeader = true ;
+     if(isLandingPage || isNoPage404){
+        showHeader = false;
+     }
+    console.log(showHeader);
 
     return (
         <>
