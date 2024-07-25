@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import pic from '../../assets/dprofile1.png';
 
 export default function Header() {
 
     const [dropdownVisible, setDropdownVisible] = useState(false);
+    const navigate = useNavigate();
 
-    const toggleDropdown = (e) => {
+    const toggleDropdown = () => {
         // e.stopPropagation();
         setDropdownVisible(!dropdownVisible);
 
@@ -25,6 +26,12 @@ export default function Header() {
         };
     }, [dropdownVisible]);
 
+    const handleLogOut = () => {
+        localStorage.removeItem("CurrentUser");
+        navigate('/');
+
+    }
+
     return (
         <header>
             <p className='header-text-full'>Todo Management System</p>
@@ -34,7 +41,7 @@ export default function Header() {
             {dropdownVisible && (
                     <ul className={`dropdown-menu dropdown-menu-header ${dropdownVisible ? 'visible' : ''}`}>
                         <li className='list'><Link to='/auth/update-password' className='dropdown-link' >Update Password</Link></li>
-                        <li className='list'><Link to='/' className='dropdown-link' >Logout</Link></li>
+                        <li className='list'><button  className='btn dropdown-link' onClick={ handleLogOut} >Logout</button></li>
                     </ul>
             )}
         </header>

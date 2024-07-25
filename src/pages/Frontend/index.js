@@ -12,16 +12,8 @@ import NoPage404 from './NoPage404';
 
 export default function Frontend() {
     const location = useLocation();
-    const isLandingPage = location.pathname === '/';
-    const isNoPage404 = location.pathname === '*';
-
-    console.log(isLandingPage);
-    console.log(isNoPage404);
-    let showHeader = true ;
-     if(isLandingPage || isNoPage404){
-        showHeader = false;
-     }
-    console.log(showHeader);
+    const routesWithHeader = ['/home', '/todo-list', '/user-list', '/create-todo'];
+    const showHeader = routesWithHeader.includes(location.pathname);
 
     return (
         <>
