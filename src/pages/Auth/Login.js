@@ -7,7 +7,6 @@ import hideImg from '../../assets/hide.png'
 
 const LOCAL_STORAGE_KEY = 'assign02Users';
 // Define the keys you want to keep
-const KEYS_TO_KEEP = ['assign02Users', 'assign02Todos'];
 const initialState = { email: "", password: "" };
 
 export default function Login() {
@@ -15,19 +14,6 @@ export default function Login() {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [state, setState] = useState(initialState)
     const navigate = useNavigate()
-
-
-    // Remove other local storage data
-    const removeOtherLocalStorageData = () => {
-        Object.keys(localStorage).forEach(key => {
-            if (!KEYS_TO_KEEP.includes(key)) {
-                localStorage.removeItem(key);
-            }
-        });
-    };
-
-    // Call the function to remove unwanted data
-    removeOtherLocalStorageData();
 
 
 
